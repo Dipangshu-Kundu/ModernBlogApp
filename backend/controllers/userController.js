@@ -189,6 +189,9 @@ async function googleAuth(req, res) {
                         name: user.name,
                         email: user.email,
                         username:user.username,
+                        profilePic:user.profilePic,
+                        showSavedBlogs:user.showSavedBlogs,
+                        showLikedBlogs:user.showLikedBlogs,
                         token
                     },
                 })
@@ -221,6 +224,9 @@ async function googleAuth(req, res) {
                 name: newUser.name,
                 email: newUser.email,
                 username: newUser.username,
+                profilePic:newUser.profilePic,
+                showSavedBlogs:newUser.showSavedBlogs,
+                showLikedBlogs:newUser.showLikedBlogs,
                 token
             },
         })
