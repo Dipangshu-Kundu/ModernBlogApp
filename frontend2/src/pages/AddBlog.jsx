@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
-import CodeTool from '@editorjs/code';
 
 import EditorJS from '@editorjs/editorjs';
 import Header from '@editorjs/header'
@@ -162,10 +161,7 @@ function AddBlog() {
                     class: List,
                     inlineToolbar: true
                 },
-                code: {
-                    class: CodeTool,
-                    inlineToolbar: true
-                },
+               
                 embed: {
                     class: Embed,
                     inlineToolbar: true
