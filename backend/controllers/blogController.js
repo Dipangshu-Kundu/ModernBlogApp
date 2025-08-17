@@ -10,17 +10,7 @@ const { randomUUID } = new ShortUniqueid({ length: 10 })
 //safe routes
 async function createBlog(req, res) {
     try {
-        // if(!req.body.token){
-        //     return res.status(200).json({
-        //         message:"please sign in"
-        //     })
-        // }
-        // let isValid=await verifyJWT(req.body.token)
-        // if(!isValid){
-        //     return res.status(200).json({
-        //         message:"invalid token"
-        //     })
-        // }
+        
 
         const creator = req.user;
         const { title, description } = req.body;
@@ -57,7 +47,10 @@ async function createBlog(req, res) {
         let imageIndex = 0;
         for (let i = 0; i < content.blocks.length; i++) {
             const block = content.blocks[i]
-            if (block.type == "image") {
+            if (block.type === "image") {
+
+                console.log("hello");
+                
                 const { secure_url, public_id } = await uploadImage(
                     `data:image/jpeg;base64,${images[imageIndex].buffer.toString("base64")}`
                 )

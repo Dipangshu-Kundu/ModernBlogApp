@@ -52,7 +52,7 @@ function AddBlog() {
         })
 
         try {
-            const res = await axios.post(`http://localhost:3000/api/v1/blogs`, formData, {
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/blogs`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     Authorization: `Bearer ${token}`
